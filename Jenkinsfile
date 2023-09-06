@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         node {
-            label 'teste_python_dockerhub'
+            label 'python_dockerhub'
             }
       }
     triggers {
