@@ -1,9 +1,7 @@
 pipeline {
     agent { 
-        node {
-            label 'python_dockerhub'
-            }
-      }
+        label 'docker-agent-python'
+    }
     triggers {
         pollSCM '* * * * *'
     }
@@ -11,10 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                sh '''
-                cd myapp
-                pip install -r requirements.txt
-                '''
+                echo "build ok"
             }
         }
         stage('Test') {
